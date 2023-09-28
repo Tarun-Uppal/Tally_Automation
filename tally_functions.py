@@ -68,9 +68,12 @@ def put_head(name, date, invoice_no):
     while(pg.locateOnScreen('images/purchase.png') == None):
         pg.press("enter")
     
-        
+    """Enters in the data and goes to total 
+    """
 def put_data(data):
-    for data1 in data:
+    length = len(data)
+    for i in range(length):
+        data1 = data[i]
         print(str(data1))
         part = str(data1[0])
         quantity = str(data1[1])
@@ -89,25 +92,30 @@ def put_data(data):
         pg.press("enter")
         pg.press("enter")
         pg.write(disc)
+        if (i+1) == length:
+            break
         while(pg.locateOnScreen('images/new_product.png') == None):
             pg.press("enter")
-        
-    # Error before this 
+    pg.press("enter")
     while(pg.locateOnScreen('images/end_of_list.png') == None):
         pg.press("enter")
-        print("WOSSSSSSS")
-    # time.sleep(2)
     pg.press("backspace")
     
     
 def put_closing():
     pg.write("cgs")
     pg.press("down")
-    while(pg.locateOnScreen('images/new_product.png') == None):
-        pg.press("enter")
+    while(pg.locateOnScreen('images/LOLA.png') == None):
+            time.sleep(0.1)
+            pg.press("enter")
+            print("END")
     pg.write("sgs")
-    while(pg.locateOnScreen('images/new_product.png') == None):
-        pg.press("enter")
+    pg.press("down")
+    while(pg.locateOnScreen('images/LOLA.png') == None):
+            time.sleep(0.1)
+            pg.press("enter")
+    pg.press("backspace")
     pg.write("round")
+    pg.press("down")
     while(pg.locateOnScreen('images/end_of_bill.png') == None):
         pg.press("enter")

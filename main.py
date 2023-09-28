@@ -14,6 +14,6 @@ def main():
         data = [part, part]
         tf.put_head(name, date, invoice_no)
         tf.put_data(data)
-        # tf.put_closing()
+        tf.put_closing()
 
 main()
